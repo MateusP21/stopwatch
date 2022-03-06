@@ -1,0 +1,72 @@
+.window {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border: 2px solid black;
+  box-shadow: -10px 8px 0px 0px #262525;
+}
+
+.window-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+input {
+  font-size: 24px;
+  padding: 4px;
+  width: 50px;
+  text-align: center;
+  border: none;
+  background: #00000052;
+  color: white;
+}
+
+input::placeholder {
+  color: rgb(185, 185, 185);
+}
+
+.window-controls {
+  margin-top: 16px;
+  padding: 8px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.window-controls span {
+  background-color: rgb(240, 240, 240);
+  border: 2px solid black;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.window-controls span:hover {
+  box-shadow: -4px 4px 0px 0px #262525;
+}
+
+.window h1 {
+  margin-top: 25px;
+  align-self: center;
+  font-size: 88px;
+  color: white;
+}
+.window-bar {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 2px solid black;
+}
+
+.window-bar-buttons {
+  display: flex;
+  gap: 8px;
+}
+.circle-button {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 100%;
+}
