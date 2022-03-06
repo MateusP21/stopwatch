@@ -2,7 +2,23 @@ import React from 'react'
 import './index.css'
 
 export default class Display extends React.Component {
+  constructor() {
+    super() 
+    this.state = {
+      minutes:'05',
+      seconds:'00'
+    }
+  }
+
+  handleMinutes = (minutes) => {
+    this.setState({minutes})
+  }
+
+  handleSeconds = (seconds) => {
+    this.setState({seconds})
+  }
   render() {
+    const {minutes,seconds} = this.state
     return <div className='window'>
       <div className="window-bar">
         <p>stopwatch.exe</p>
@@ -13,10 +29,10 @@ export default class Display extends React.Component {
         </div>
 
       </div>
-      <h1>05:00</h1>
+      <h1>{minutes}:{seconds}</h1>
       <div className="window-inputs">
-        <input type="number" name="" id="" placeholder='MM'/>
-        <input type="number" name="" id="" placeholder='SS'/>
+        <input onChange={(e) => this.handleMinutes(e.target.value)} type="number" name="" id="" placeholder='MM'/>
+        <input onChange={(e) => this.handleSeconds(e.target.value)}  type="number" name="" id="" placeholder='SS'/>
       </div>
       <div className="window-controls">
         <span>START</span>
