@@ -5,8 +5,8 @@ export default class Display extends React.Component {
   constructor() {
     super();
     this.state = {
-      startingMinutes: '0',
-      startingSeconds: '0',
+      startingMinutes: '',
+      startingSeconds: '',
       time: 0,
       seconds: 0,
       minutes: 0,
@@ -61,7 +61,7 @@ export default class Display extends React.Component {
 
   startCountdown = () => {
     const { startingMinutes, startingSeconds } = this.state;
-    if (startingMinutes === 0 && startingSeconds === 0) {
+    if (startingMinutes === '' && startingSeconds === '') {
       toast.error('Valores inválidos 😔', {
         position: 'top-center',
         autoClose: 5000,
@@ -97,8 +97,8 @@ export default class Display extends React.Component {
   resetCountdown = () => {
     this.stopCountdown();
     this.setState({
-      startingMinutes: 0,
-      startingSeconds: 0,
+      startingMinutes: '',
+      startingSeconds: '',
       minutes: 0,
       seconds: 0,
       time: 0,
