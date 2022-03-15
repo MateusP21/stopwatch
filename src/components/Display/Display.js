@@ -20,12 +20,13 @@ export default class Display extends React.Component {
   componentDidMount() {
     this.setState(
       {
+        //transformando os valores inicias em segundos
         time: this.state.startingMinutes * 60 + this.state.startingSeconds,
       },
       () => {
         this.setState({
-          minutes: Math.floor(this.state.time / 60),
-          seconds: this.state.time % 60,
+          minutes: Math.floor(this.state.time / 60), // transformando em minutos
+          seconds: this.state.time % 60, // pegandos os segundos restantes
         });
       }
     );
