@@ -1,6 +1,6 @@
 import React from 'react';
-import './index.css';
 import { toast } from 'react-toastify';
+import './index.css';
 export default class Display extends React.Component {
   constructor() {
     super();
@@ -56,22 +56,16 @@ export default class Display extends React.Component {
     }
 
     if (prevState.time !== this.state.time && this.state.time === 0) {
-      this.resetCountdown();
+      toast.success('Hora de voltar !!! 🤓')
+      this.resetCountdown()
+     
     }
   }
 
   startCountdown = () => {
     const { startingMinutes, startingSeconds } = this.state;
     if (startingMinutes === '' && startingSeconds === '') {
-      toast.error('Valores inválidos 😔', {
-        position: 'top-center',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.error('Valores inválidos 😔');
     } else {
       this.interval = setInterval(() => {
         this.setState({
