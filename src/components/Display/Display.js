@@ -18,18 +18,7 @@ export default class Display extends React.Component {
   }
 
   componentDidMount() {
-    this.setState(
-      {
-        //transformando os valores inicias em segundos
-        time: this.state.startingMinutes * 60 + this.state.startingSeconds,
-      },
-      () => {
-        this.setState({
-          minutes: Math.floor(this.state.time / 60), // transformando em minutos
-          seconds: this.state.time % 60, // pegandos os segundos restantes
-        });
-      }
-    );
+
   }
 
   componentDidUpdate(_, prevState) {
@@ -37,13 +26,6 @@ export default class Display extends React.Component {
       prevState.startingMinutes !== this.state.startingMinutes ||
       prevState.startingSeconds !== this.state.startingSeconds
     ) {
-      if (
-        isNaN(this.state.startingMinutes) ||
-        isNaN(this.state.startingSeconds)
-      ) {
-        this.resetCountdown();
-      }
-
       this.setState({
         time: this.state.startingMinutes * 60 + this.state.startingSeconds,
       });
@@ -55,10 +37,9 @@ export default class Display extends React.Component {
       });
     }
 
-    if (prevState.time !== this.state.time && this.state.time === 0) {
-      toast.success('Hora de voltar !!! 🤓')
-      this.resetCountdown()
-     
+    if (prevState.time === 1 && this.state.time === 0) {
+     toast.success('Hora de voltar !!! 🤓')
+     this.resetCountdown()
     }
   }
 
@@ -105,11 +86,11 @@ export default class Display extends React.Component {
   }
 
   handleMinutes = (startingMinutes) => {
-    this.setState({ startingMinutes: parseInt(startingMinutes) });
+    this.setState({ startingMinutes: Number(startingMinutes) });
   };
 
   handleSeconds = (startingSeconds) => {
-    this.setState({ startingSeconds: parseInt(startingSeconds) });
+    this.setState({ startingSeconds: Number(startingSeconds) });
   };
   render() {
     const {
