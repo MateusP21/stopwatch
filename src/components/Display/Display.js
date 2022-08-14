@@ -1,6 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 import './index.css';
+
 export default class Display extends React.Component {
   constructor() {
     super();
@@ -15,10 +16,6 @@ export default class Display extends React.Component {
       showInputs: true,
       resetDisabled: true,
     };
-  }
-
-  componentDidMount() {
-
   }
 
   componentDidUpdate(_, prevState) {
@@ -38,8 +35,8 @@ export default class Display extends React.Component {
     }
 
     if (prevState.time === 1 && this.state.time === 0) {
-     toast.success('Hora de voltar !!! 🤓')
-     this.resetCountdown()
+      toast.success('Hora de voltar !!! 🤓');
+      this.resetCountdown();
     }
   }
 
