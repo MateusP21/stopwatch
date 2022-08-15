@@ -1,6 +1,5 @@
 {
   "name": "stopwatch",
-  "homepage": "https://mateusp21.github.io/stopwatch",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -38,8 +37,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^3.2.3"
   }
 }
