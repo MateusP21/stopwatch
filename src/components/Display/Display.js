@@ -120,6 +120,7 @@ export default class Display extends React.Component {
               onChange={(e) => this.handleMinutes(e.target.value)}
               value={startingMinutes}
               type="text"
+              maxLength={2}
               name=""
               id=""
               placeholder="MM"
@@ -128,6 +129,7 @@ export default class Display extends React.Component {
               onChange={(e) => this.handleSeconds(e.target.value)}
               value={startingSeconds}
               type="text"
+              maxLength={2}
               name=""
               id=""
               placeholder="SS"
